@@ -25,4 +25,10 @@ public class Search {
                 .map(Fraction::decimal);
     }
 
+    public Stream<String> findUserFamilyNameBySomeImproperFraction() {
+        return usersDatabase.findAll()
+                .filter(user -> user.getFractions().stream().anyMatch(Fraction::isImproper))
+                .map(User::getFamilyName);
+    }
+
 }
