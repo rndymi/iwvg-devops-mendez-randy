@@ -31,4 +31,11 @@ public class Search {
                 .map(User::getFamilyName);
     }
 
+    public Stream<Double> findDecimalFractionByUserName(String name) {
+        return usersDatabase.findAll()
+                .filter(user -> user.getName().equalsIgnoreCase(name))
+                .flatMap(user -> user.getFractions().stream())
+                .map(Fraction::decimal);
+    }
+
 }

@@ -63,4 +63,25 @@ public class SearchTest {
         assertTrue(result.contains("Torres"));
     }
 
+    @Test
+    void testFindDecimalFractionByUserName() {
+        Search search = new Search();
+
+        // Caso: buscar las fracciones decimales de "Oscar"
+        List<Double> result = search.findDecimalFractionByUserName("Oscar").toList();
+
+        // En UsersDatabase hay 2 usuarios con nombre "Oscar":
+        // 1) "Oscar Fernandez" → [0/1=0.0, 1/1=1.0, 2/1=2.0]
+        // 2) "Oscar López" → [1/5=0.2, 3/-6=-0.5, 1/2=0.5, 4/4=1.0]
+        // Resultado esperado: [0.0, 1.0, 2.0, 0.2, -0.5, 0.5, 1.0]
+
+        assertEquals(7, result.size());
+        assertTrue(result.contains(0.0));
+        assertTrue(result.contains(2.0));
+        assertTrue(result.contains(0.2));
+        assertTrue(result.contains(-0.5));
+        assertTrue(result.contains(0.5));
+        assertTrue(result.contains(1.0)); // aparece dos veces
+    }
+
 }
