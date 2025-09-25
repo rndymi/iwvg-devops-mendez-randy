@@ -41,4 +41,26 @@ public class SearchTest {
         assertTrue(result.contains(4.0/3.0));
     }
 
+    @Test
+    void testFindUserFamilyNameBySomeImproperFraction() {
+        Search search = new Search();
+
+        List<String> result = search.findUserFamilyNameBySomeImproperFraction().toList();
+
+        // Revisando UsersDatabase:
+        // - "Oscar Fernandez": tiene 2/1 → impropia ✅
+        // - "Ana Blanco": tiene 2/1 y 4/3 → impropias ✅
+        // - "Oscar López": tiene 3/-6 (propia), 1/2 (propia), 4/4 (impropia) ✅
+        // - "Paula Torres": tiene 2/2 y 4/4 → impropias ✅
+        // - "Antonio Blanco": solo ceros → 0/n = propia ❌
+        // - "Paula Torres" (id=6): tiene 1/1 → impropia ✅
+        // Resultado esperado = ["Fernandez", "Blanco", "López", "Torres", "Torres"]
+
+        assertEquals(5, result.size());
+        assertTrue(result.contains("Fernandez"));
+        assertTrue(result.contains("Blanco"));
+        assertTrue(result.contains("López"));
+        assertTrue(result.contains("Torres"));
+    }
+
 }
