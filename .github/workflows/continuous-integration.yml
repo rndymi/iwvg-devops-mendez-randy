@@ -60,11 +60,3 @@ jobs:
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-#added CI with GitHub Actions #1
-#fixed CI error #1
-#code Analysis with Sonarcloud #2
-#added GitHub badge #1
-#added Quality Gate Status #2
-#added Docker #3
-#render config #4
