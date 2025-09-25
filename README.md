@@ -12,7 +12,7 @@
 ### Estado del código
 [![CI](https://github.com/rndymi/iwvg-devops-mendez-randy/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/rndymi/iwvg-devops-mendez-randy/actions/workflows/continuous-integration.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rndymi_iwvg-devops-mendez-randy&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=rndymi_iwvg-devops-mendez-randy)
-[![Render broken](https://iwvg-devops-latest.onrender.com/version-badge)](https://iwvg-devops-latest.onrender.com/swagger-ui.html)
+[![Render broken](https://iwvg-devops-mendez-randy.onrender.com/version-badge)](https://iwvg-devops-mendez-randy.onrender.com/swagger-ui.html)
 
 
 ### Tecnologías necesarias
