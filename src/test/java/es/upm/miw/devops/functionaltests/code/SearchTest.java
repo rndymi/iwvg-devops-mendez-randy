@@ -28,4 +28,17 @@ public class SearchTest {
         assertTrue(result.contains("5"));
     }
 
+    @Test
+    void testFindDecimalImproperFractionByUserName() {
+        Search search = new Search();
+
+        // En UsersDatabase tienes a "Ana" con fracciones:
+        // [2/1 (impropia, 2.0), -1/5 (propia), 2/4 (propia), 4/3 (impropia, 1.333...)]
+        List<Double> result = search.findDecimalImproperFractionByUserName("Ana").toList();
+
+        assertEquals(2, result.size());
+        assertTrue(result.contains(2.0));
+        assertTrue(result.contains(4.0/3.0));
+    }
+
 }
