@@ -65,3 +65,4 @@ jobs:
 #fixed CI error #1
 #code Analysis with Sonarcloud #2
 #added GitHub badge #1
+#added Quality Gate Status #2
