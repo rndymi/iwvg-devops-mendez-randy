@@ -34,6 +34,8 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+
+
     @Override
     public String toString() {
         return "Fraction{" +
