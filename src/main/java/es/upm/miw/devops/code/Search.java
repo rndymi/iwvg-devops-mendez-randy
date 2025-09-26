@@ -38,6 +38,4 @@ public class Search {
                 .map(Fraction::decimal);
     }
 
-    //
-
 }
