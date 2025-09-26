@@ -9,7 +9,6 @@ public class FractionTest {
 
     @Test
     void testFractionConstructor() {
-        // Fracción esperada: 3/4
         Fraction fraction = new Fraction(3, 4);
         assertEquals(3, fraction.getNumerator(), "El numerador no es correcto.");
         assertEquals(4, fraction.getDenominator(), "El denominador no es correcto.");
@@ -17,7 +16,6 @@ public class FractionTest {
 
     @Test
     void testFractionDefaultConstructor() {
-        // Verifica que la fracción por defecto sea 1/1
         Fraction fraction = new Fraction();
         assertEquals(1, fraction.getNumerator(), "El numerador por defecto debe ser 1.");
         assertEquals(1, fraction.getDenominator(), "El denominador por defecto debe ser 1.");
@@ -32,7 +30,6 @@ public class FractionTest {
         assertFalse(improperFraction.isProper(), "3/2 no debería ser propia.");
     }
 
-    // 2. Test para isImproper
     @Test
     void testIsImproper() {
         Fraction improperFraction = new Fraction(5, 3); // 5/3 es impropia
@@ -44,7 +41,6 @@ public class FractionTest {
         assertTrue(equalFraction.isImproper(), "4/4 debería ser impropia.");
     }
 
-    // 3. Test para isEquivalent
     @Test
     void testIsEquivalent() {
         Fraction f1 = new Fraction(1, 2); // 1/2
@@ -55,36 +51,34 @@ public class FractionTest {
         assertFalse(f1.isEquivalent(f3), "1/2 y 3/5 no deberían ser equivalentes.");
     }
 
-    // 4. Test para add (Suma)
     @Test
     void testAdd() {
         Fraction f1 = new Fraction(1, 2); // 1/2
         Fraction f2 = new Fraction(1, 3); // 1/3
-        // Resultado: (1*3 + 2*1) / (2*3) = 5/6
+
         Fraction result = f1.add(f2);
 
         assertEquals(5, result.getNumerator(), "El numerador de la suma debe ser 5.");
         assertEquals(6, result.getDenominator(), "El denominador de la suma debe ser 6.");
     }
 
-    // 5. Test para multiply (Multiplicación)
     @Test
     void testMultiply() {
         Fraction f1 = new Fraction(2, 3); // 2/3
         Fraction f2 = new Fraction(1, 5); // 1/5
-        // Resultado: (2*1) / (3*5) = 2/15
+
         Fraction result = f1.multiply(f2);
 
         assertEquals(2, result.getNumerator(), "El numerador de la multiplicación debe ser 2.");
         assertEquals(15, result.getDenominator(), "El denominador de la multiplicación debe ser 15.");
     }
 
-    // 6. Test para divide (División)
+
     @Test
     void testDivide() {
         Fraction f1 = new Fraction(3, 4); // 3/4
         Fraction f2 = new Fraction(1, 2); // 1/2
-        // Resultado: (3*2) / (4*1) = 6/4
+
         Fraction result = f1.divide(f2);
 
         assertEquals(6, result.getNumerator(), "El numerador de la división debe ser 6.");
